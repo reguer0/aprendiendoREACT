@@ -16,3 +16,7 @@ export interface searchFilmProps {
 export interface filterByVotesProps {
   filterByVotes: (ascending: boolean) => void;
 }
+ 
+  export interface SearchType {
+    onFilterChange:(type:string) => void; 
+  }
