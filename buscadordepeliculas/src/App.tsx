@@ -23,9 +23,11 @@ const filterByVotes= (ascending: boolean) => {
     <>
       <h1>Buscador de Peliculas</h1>
       <FilmSearchBar  onSearch={onsearch} filterByVotes={filterByVotes} />
-      {filmInfo.map((film) => (
-        <FilmCard key={film.id} {...film} />
-      ))}
+      <div className="films-container">
+        {filmInfo.map((film) => (
+          <FilmCard key={film.id} {...film} />
+        ))}
+      </div>
     </>
   )
 }

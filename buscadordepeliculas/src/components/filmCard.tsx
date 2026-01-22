@@ -1,7 +1,8 @@
 import type { FilmType } from '../types/types';
+import './filmCardStyle.css';
 export function FilmCard(film: FilmType) {
     return (
-        <div >
+        <div className="film-card">
             <h2>{film.title}</h2>
             <p>Release Date: {film.release_date}</p>
             {film.poster_path && (
@@ -10,8 +11,8 @@ export function FilmCard(film: FilmType) {
                     alt={`Poster of ${film.title}`} 
                 />
             )}           
-            <p>{film.overview}</p>
-            <p>Rating: {film.vote_average} ({film.vote_count} votes)</p>
+            <p className="overview">{film.overview}</p>
+            <p className="rating">Rating: {film.vote_average} ({film.vote_count} votes)</p>
         </div>
     );
 }
