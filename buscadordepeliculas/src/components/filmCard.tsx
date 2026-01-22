@@ -1,7 +1,7 @@
 import type { FilmType } from '../types/types';
 export function FilmCard(film: FilmType) {
     return (
-        <div>
+        <div >
             <h2>{film.title}</h2>
             <p>Release Date: {film.release_date}</p>
             {film.poster_path && (
