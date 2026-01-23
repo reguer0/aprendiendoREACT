@@ -50,4 +50,12 @@
   font-weight: bold;
   color: #fbbf24;
   font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.film-card .rating::before {
+  content: '⭐';
+  font-size: 1.1rem;
 }

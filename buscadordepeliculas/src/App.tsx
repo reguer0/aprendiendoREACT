@@ -24,9 +24,10 @@ function App() {
   };
 
   const filterByVotes = (ascending: boolean) => {
-    ascending
-      ? setfilmInfo([...filmInfo].sort((a, b) => a.vote_average - b.vote_average))
-      : setfilmInfo([...filmInfo].sort((a, b) => b.vote_average - a.vote_average))
+    const sortedFilms = [...filmInfo].sort((a, b) => 
+      ascending ? a.vote_average - b.vote_average : b.vote_average - a.vote_average
+    );
+    setfilmInfo(sortedFilms);
   }
 
   return (

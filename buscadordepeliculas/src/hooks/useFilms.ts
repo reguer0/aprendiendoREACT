@@ -1,7 +1,8 @@
 import type { FilmType } from '../types/types';
 import { useEffect, useState } from 'react';
-const API_KEY = '6693fa0919381e56631e2f21f49c8bfc'; // Reemplaza con tu clave de API
-const BASE_URL = 'https://api.themoviedb.org/3';
+
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+const BASE_URL = import.meta.env.VITE_TMDB_BASE_URL ;
 
 //TODO: crear como custom hook, y manejar errrores
 export function useFilms(filmName: string , type: string = 'popular') {
