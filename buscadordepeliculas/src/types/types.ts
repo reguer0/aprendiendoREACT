@@ -8,6 +8,12 @@ export interface FilmType{
     vote_count: number;
 }
 
+export interface activeFiltersProps {
+  filmName: string;
+  searchType: string;
+  filmInfo: FilmType[];
+}
+
 
 export interface searchFilmProps {
   onSearch: (newFilm: string) => void;

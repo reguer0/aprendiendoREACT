@@ -5,9 +5,10 @@ import { FilmSearchBar } from './components/filmSearchBar';
 import { FilmCard } from './components/filmCard';
 import { useFilms } from './hooks/useFilms';
 import { ErrorCard } from './components/errorCard';
+import { ActiveFilters } from './components/activeFilters';
 
 function App() {
-  const [filmName, setFilmName] = useState('Matrix');
+  const [filmName, setFilmName] = useState('');
   const [searchType, setSearchType] = useState('popular');
   const { filmInfo, setFilmInfo, error } = useFilms(filmName, searchType);
 
@@ -31,13 +32,12 @@ function App() {
     setFilmInfo(sortedFilms);
   }
 
+
   return (
     <>
       <h1>Buscador de Peliculas</h1>
-      <FilmSearchBar onSearch={onsearch} filterByVotes={filterByVotes} onFilterChange={handleFilterChange} />
-       
-    
-       
+      <FilmSearchBar onSearch={onsearch} filterByVotes={filterByVotes} onFilterChange={handleFilterChange} />       
+      <ActiveFilters filmName={filmName} searchType={searchType} filmInfo={filmInfo} />       
       <div className="films-container">
         {error 
         ? (<ErrorCard error={error} />)
